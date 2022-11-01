@@ -1,24 +1,46 @@
-import { useCallback } from "react"
+import { useEffect, useState, useCallback } from "react"
 import { useNavigate } from "react-router-dom"
 import Lottie from 'react-lottie-player'
-import lottieJson1 from '../../lottie.json'
-import lottieJson2 from '../../lottie2.json'
-import lottieJson3 from '../../lottie3.json'
-import lottieJson4 from '../../lottie4.json'
-import lottieJson5 from '../../lottie5.json'
-import lottieJson6 from '../../lottie6.json'
 
+import lottieJson1 from '../assets/lotties/lottie1.json'
+import lottieJson2 from '../assets/lotties/lottie2.json'
+import lottieJson3 from '../assets/lotties/lottie3.json'
+import lottieJson4 from '../assets/lotties/lottie4.json'
+import lottieJson5 from '../assets/lotties/lottie5.json'
+import lottieJson6 from '../assets/lotties/lottie6.json'
 
 
 function CardsPage() {
 
-		const navigate = useNavigate()
-		const previousPage = useCallback(() => navigate('/start', {replace: true}), [navigate])
-		const finish = useCallback(() => navigate('/', {replace: true}), [navigate])
-		const restart = useCallback(() => navigate('/game', {replace: true}), [navigate])
-		const winPage = useCallback(() => navigate('/game/win', {replace: true}), [navigate])
-		const highscorePage = useCallback(() => navigate('/game/highscore', {replace: true}), [navigate])
-		const losePage = useCallback(() => navigate('/game/lose', {replace: true}), [navigate])
+	const [cards, setCards] = useState([
+		lottieJson1, lottieJson1, 
+		lottieJson2, lottieJson2, 
+		lottieJson3, lottieJson3, 
+		lottieJson4, lottieJson4, 
+		lottieJson5, lottieJson5, 
+		lottieJson6, lottieJson6
+	])
+
+	useEffect(() => {
+		initialLayout()
+	}, [])
+
+	const initialLayout = () => {
+		setCards((prev) => {
+			const newLayout = [...prev]
+			return newLayout
+		})
+	}
+
+	// navigation block 
+	const navigate = useNavigate()
+	const previousPage = useCallback(() => navigate('/start', {replace: true}), [navigate])
+	const finish = useCallback(() => navigate('/', {replace: true}), [navigate])
+	const restart = useCallback(() => navigate('/game', {replace: true}), [navigate])
+	const winPage = useCallback(() => navigate('/game/win', {replace: true}), [navigate])
+	const highscorePage = useCallback(() => navigate('/game/highscore', {replace: true}), [navigate])
+	const losePage = useCallback(() => navigate('/game/lose', {replace: true}), [navigate])
+
 
 	return (
 		<div className="CardsPage relative">
@@ -37,12 +59,7 @@ function CardsPage() {
 			<ul 
 				className="mx-auto flex flex-wrap justify-between gap-y-12 gap-x-4 px-40 py-16">
 				{[	
-					lottieJson1, lottieJson1, 
-					lottieJson2, lottieJson2, 
-					lottieJson3, lottieJson3, 
-					lottieJson4, lottieJson4, 
-					lottieJson5, lottieJson5, 
-					lottieJson6, lottieJson6
+					{initialLayout}
 				]
 					.sort(()=> Math.random()-0.5)
 					.map((value) => 
@@ -51,8 +68,6 @@ function CardsPage() {
 							<Lottie
 								animationData={value}
 								loop
-								hover
-								play
 								style={{ width: 150, height: 150 }}
 							/>
 						</li>
