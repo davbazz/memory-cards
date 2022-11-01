@@ -1,41 +1,41 @@
+import { useState, useCallback } from "react"
+import { useNavigate } from "react-router-dom"
 
 function InitialPage() {
+
+	const [name, setName] = useState('')
+	
+	const navigate = useNavigate()
+	const nextPage = useCallback(() => navigate('/start', {replace: true}), [navigate])
+ 	
 	return (
-		<div>
-			<header>
-				<nav className="flex justify-end items-center">
-					<div className="buttons flex justify-around 2xl:w-36 xl:w-32 lg:w-28 md:w-24 w-24	h-auto">
-						<button className="flex-1 bg-transparent border-r border-slate-900 md:h-11 h-10 pr-1">
-							<svg 
-								xmlns="http://www.w3.org/2000/svg" 
-								class="bi bi-brightness-high" 
-								viewBox="0 0 16 16" 
-								className="mx-auto fill-slate-900 w-8 h-8">
-								<path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-							</svg>
-						</button>
-						<button className="flex-1 bg-transparent border-l border-slate-900 md:h-11 h-10">
-							<svg 
-								xmlns="http://www.w3.org/2000/svg" 
-								class="bi bi-moon" 
-								viewBox="0 0 16 16" 
-								className="mx-auto fill-slate-900 w-7 h-7">
-								<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"/>
-							</svg>
-						</button>
-					</div>
-				</nav>
-			</header>
-			<main>
-				<h1 className="text-center text-slate-900 font-fuzzy 2xl:text-8xl xl:text-7xl lg:text-7xl md:text-6xl text-5xl 2xl:mt-18 mt-16">Random cards game</h1>
+		<div className="InitialPage">
+			<h1 
+				className="text-center text-darkBlue 2xl:text-9xl xl:text-8xl lg:text-8xl md:text-7xl text-6xl 2xl:mt-18 mt-16">
+				Random Cards Game
+			</h1>
+			<div className="mx-auto flex justify-center items-center gap-12 2xl:mt-52 xl:mt-48 lg:mt-44 md:mt-40 sm:mt-36 mt-28">
 				<input 
+					value={name}
+					onChange={event => setName(event.target.value)}
 					required
 					placeholder="ENTER YOUR NICKNAME" 
-					className="block mx-auto text-center p-8 rounded-xl placeholder:text-slate-900 cursor-pointer border-2 lg:h-1/6 md:h-20 h-14 sm:text-2xl text:xl 2xl:mt-52 xl:mt-48 lg:mt-44 md:mt-40 sm:mt-36 mt-28 2xl:w-4/12 border-solid border-slate-900 focus:outline-none focus:border-yellow-400 caret-transparent shadow hover:shadow-sm hover:shadow-slate-600 focus:shadow-yellow-400"
-				/> 
-			</main>
+					className="text-center text-3xl w-3/12 h-20 px-6 rounded-xl border-2 border-slate-900 bg-lightBlue caret-transparent cursor-pointer placeholder:text-darkBlue placeholder:text-xl focus:outline-none focus:border-lightGreen"
+				/>
+				<button 
+					onClick={nextPage}
+					className="text-center text-3xl w-1/12 h-20 cursor-pointer rounded-xl border-2 border-slate-900 hover:bg-lightBlue">
+					GO
+				</button>
+				{/*<div>{`you nickname is ${name}`}</div>*/}
+			</div>
 		</div>
-		)
+	)
 }
 
 export default InitialPage
+
+
+{/*input-nickname block text-center py-10 w-3/12 l-2/6 rounded-2xl placeholder:text-darkBlue placeholder:text-xl cursor-pointer border-2 sm:text-3xl text-xl bg-lightBlue border-solid border-slate-900 focus:outline-none caret-transparent*/}
+
+{/*button-nickname block text-center py-10 w-1/12 l-2/6 rounded-2xl cursor-pointer border-2 sm:text-3xl text:xl border-solid border-slate-900 hover:bg-lightBlue*/}

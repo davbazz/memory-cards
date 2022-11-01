@@ -1,0 +1,11 @@
+working version of pluggin in lottie
+
+import Lottie from 'react-lottie-player'
+import lottie from '../../lottie.json'
+
+<Lottie
+    loop
+    animationData={lottie}
+    play
+    style={{ width: 150, height: 150 }}
+/>
