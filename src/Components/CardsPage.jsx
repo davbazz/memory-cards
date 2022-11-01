@@ -10,33 +10,50 @@ import lottieJson5 from '../assets/lotties/lottie5.json'
 import lottieJson6 from '../assets/lotties/lottie6.json'
 
 
+const rawLotties = [
+	{name: lottieJson1},
+	{name: lottieJson2},
+	{name: lottieJson3},
+	{name: lottieJson4},
+	{name: lottieJson5},
+	{name: lottieJson6},
+]
+
+function addInitialData() {
+	return [...rawLotties, ...rawLotties].map(item => ({name: item.name, matched: false, faceUp: false}))
+}
+
+
 function CardsPage() {
 
-	const [cards, setCards] = useState([
-		lottieJson1, lottieJson1, 
-		lottieJson2, lottieJson2, 
-		lottieJson3, lottieJson3, 
-		lottieJson4, lottieJson4, 
-		lottieJson5, lottieJson5, 
-		lottieJson6, lottieJson6
-	])
+	const [cards, setCards] = useState(addInitialData)
+	const [matchCount, setMatchCount] = useState(0)
 
 	useEffect(() => {
-		initialLayout()
+		randomiseCards()
 	}, [])
 
-	const initialLayout = () => {
-		setCards((prev) => {
-			const newLayout = [...prev]
-			return newLayout
-		})
+	const randomiseCards = () => setCards((prev) => {
+		const newlyRandomisedcards = [...prev]
+		newlyRandomisedcards.sort(()=> Math.random()-0.5)
+		return newlyRandomisedcards
+	})
+
+	const flipThisCard = (i) => setCards((prev) => {
+		const flippedCard = [...prev]
+		flippedCard[i].faceUp = !flippedCard[i].faceUp 
+		return flippedCard
+	})
+
+	const restart = () => {
+		randomiseCards()
+		alert('the game was restarted')
 	}
 
 	// navigation block 
 	const navigate = useNavigate()
 	const previousPage = useCallback(() => navigate('/start', {replace: true}), [navigate])
 	const finish = useCallback(() => navigate('/', {replace: true}), [navigate])
-	const restart = useCallback(() => navigate('/game', {replace: true}), [navigate])
 	const winPage = useCallback(() => navigate('/game/win', {replace: true}), [navigate])
 	const highscorePage = useCallback(() => navigate('/game/highscore', {replace: true}), [navigate])
 	const losePage = useCallback(() => navigate('/game/lose', {replace: true}), [navigate])
@@ -58,18 +75,20 @@ function CardsPage() {
 			</div>
 			<ul 
 				className="mx-auto flex flex-wrap justify-between gap-y-12 gap-x-4 px-40 py-16">
-				{[	
-					{initialLayout}
-				]
-					.sort(()=> Math.random()-0.5)
-					.map((value) => 
+				{cards
+					.map(({	name,
+							matched,
+							faceUp
+						}, i) => 
 						<li 
+							onClick={()=>flipThisCard(i)}
 							className="border-2 border-slate-900 w-1/5">
+							{(matched || faceUp) ? 
 							<Lottie
-								animationData={value}
+								animationData={name}
 								loop
 								style={{ width: 150, height: 150 }}
-							/>
+							/>:<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Card_back_06.svg/209px-Card_back_06.svg.png?20071016214942"></img>}
 						</li>
 					)
 				}
@@ -83,27 +102,3 @@ function CardsPage() {
 }
 
 export default CardsPage
-
-
-
-{/*let shuffled = unshuffled
-		.map(value => ({ value, sort: Math.random() }))
-		.sort((a, b) => a.sort - b.sort)
-		.map(({ value }) => value)
-	 
-console.log(shuffled)*/}
-
-{/*<div className='cards_categories'>
-								{[  
-										"All",
-										"Bedroom",
-										"Living Room",
-										"Kitchen",
-										"Workspace",
-										"Outdoor",
-										"Bathroom",
-										"Baby & Children",
-										"Dining",
-										"Halway",
-								].map(cat => <div key={cat} onClick={()=>setActiveCategory(cat)} className="cards_category_link">{cat}</div>)}
-						</div>*/}
