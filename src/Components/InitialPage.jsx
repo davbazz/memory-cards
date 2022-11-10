@@ -12,7 +12,7 @@ function InitialPage() {
 		<div className="InitialPage">
 			<h1 
 				className="text-center text-darkBlue 2xl:text-9xl xl:text-8xl lg:text-8xl md:text-7xl text-6xl 2xl:mt-18 mt-16">
-				Random Cards Game
+				Memory Card Game
 			</h1>
 			<div className="mx-auto flex justify-center items-center gap-12 2xl:mt-52 xl:mt-48 lg:mt-44 md:mt-40 sm:mt-36 mt-28">
 				<input 

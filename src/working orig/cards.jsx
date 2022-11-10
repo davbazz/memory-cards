@@ -21,7 +21,6 @@ function CardsPage() {
 
 	const [cards, setCards] = useState([])
   	const [turns, setTurns] = useState(0)
-	const [countMatch, setCountMatch] = useState(0)
   	const [choiceOne, setChoiceOne] = useState(null)
   	const [choiceTwo, setChoiceTwo] = useState(null)
   	const [disabled, setDisabled] = useState(false)
@@ -40,7 +39,6 @@ function CardsPage() {
 		  setChoiceTwo(null)
 		  setCards(shuffledCards)
 		  setTurns(0)
-		  setCountMatch(0)
 	}
 
 	// handle a choice 
@@ -62,7 +60,6 @@ function CardsPage() {
 						}
 					})
 				})
-				setCountMatch((prev) => prev + 1)
 				resetTurn()
 			} else {
 				setTimeout(() => resetTurn(), 1000)
@@ -76,19 +73,8 @@ function CardsPage() {
 		setChoiceTwo(null)
 		setTurns(prev => prev + 1)
 		setDisabled(false)
-		console.log(countMatch)
-		checkEndGame()
 	}
-
-	// check end game 
-	const checkEndGame = () => {
-		if (countMatch === 5) {
-			console.log('game over')
-			setCountMatch(0)
-			setTimeout(() => shuffleCards(), 3000)
-		} 
-	}
-
+	
 	// start new game automatically 
 	useEffect(() => {
 		shuffleCards()
