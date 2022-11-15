@@ -12,11 +12,10 @@ function SingleCard({ card, handleChoice, flipped, disabled }) {
         <div className="card">
             <div className={flipped ? "flipped" : ""}>
                 <Lottie
-                    className="front"
+                    className="front mx-auto my-auto w-1/5"
                     loop
-                    play
                     animationData={card.src}
-                    style={{ width: 150, height: 150 }}
+                    play
                 />
                 <img 
                     onClick={handleClick}

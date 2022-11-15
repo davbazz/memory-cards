@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --app-height: 100%;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -15,6 +19,12 @@
 :-moz-placeholder {
     text-align: center;
 }
+
+.screen-size {
+    height: 100vh;
+    min-height: 600px; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+  }
 
 @keyframes shake {
     0%, 100% {
@@ -75,3 +85,64 @@
     transition-delay: 0s;
 }
 
+.footer-position {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slow-button {
+    box-shadow: 0 0 20px 10px rgba(136, 158, 175, 0.7);
+    border: solid 2px transparent;
+    background-color: transparent;
+    transition: box-shadow 1s, border 1s, background-color 2s;
+}
+
+.slow-button:hover {
+    box-shadow: none;
+    border: solid 2px #111827;
+    background-color: rgba(136, 158, 175, 0.7);
+}
+
+.slow-button-sm {
+    border: solid 2px transparent;
+    background-color: transparent;
+    transition: border 1.5s, background-color 2s;
+}
+
+
+/* try dynamic shadow aniation
+/* #myDIV {
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+    color: white;
+    animation: mymove 5s infinite;
+  }
+  
+  @keyframes shadow-dance {
+    0% {}
+    50% {box-shadow: 10px 20px 30px blue;}
+  } */
+
+
+
+/* try ::after one more time
+/* .slow-button {
+box-shadow: 0 0 20px 10px rgba(136, 158, 175, 0.7);
+border: solid 2px transparent;
+background-color: transparent;
+transition: box-shadow 1s, border 1s, background-color 2s;
+}
+.slow-button::after {
+    content: '';
+    opacity: 0;
+    z-index: -1;
+    box-shadow: none;
+    border: solid 2px #111827;
+    background-color: rgba(136, 158, 175, 0.7);
+}
+.slow-button:hover::hover {
+    opacity: 1;
+} */

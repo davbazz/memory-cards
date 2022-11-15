@@ -6,10 +6,19 @@ import CardsPage from'./Components/CardsPage.jsx'
 import WinPage from './Components/WinPage'
 import Highscore from './Components/HighscorePage'
 import LosePage from './Components/LosePage'
+import Footer from './Components/Footer'
 
 function App() {
+
+  function appHeight() {
+    const doc = document.documentElement
+    doc.style.setProperty('--vh', (window.innerHeight*.01) + 'px');
+  }
+  window.addEventListener('resize', appHeight);
+  appHeight();
+
   return (
-    <div className='py-6 px-4 min-h-screen bg-lightGray font-baloo'>
+    <div className='screen-size py-6 px-4 bg-lightGray font-baloo relative'>
       <Header />
       <Routes>
         <Route path={'/'} element={ <InitialPage /> } />
@@ -19,6 +28,7 @@ function App() {
         <Route path='/game/highscore' element={ <Highscore /> } />
         <Route path='/game/lose' element={ <LosePage /> } />
       </Routes>
+      <Footer />
     </div>
   )
 }

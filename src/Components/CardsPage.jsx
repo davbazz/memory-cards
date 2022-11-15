@@ -33,14 +33,14 @@ function CardsPage() {
 	// shuffle cards
 	const shuffleCards = () => {
 		const shuffledCards = [...cardImages, ...cardImages]
-		  .sort(() => Math.random() - 0.5)
-		  .map((card) => ({ ...card, id: Math.random() }))
-	
-		  setChoiceOne(null)
-		  setChoiceTwo(null)
-		  setCards(shuffledCards)
-		  setTurns(0)
-		  setCountMatch(0)
+			.sort(() => Math.random() - 0.5)
+			.map((card) => ({ ...card, id: Math.random() }))
+		
+			setChoiceOne(null)
+			setChoiceTwo(null)
+			setCards(shuffledCards)
+			setTurns(0)
+			setCountMatch(0)
 	}
 
 	// handle a choice 
@@ -76,7 +76,6 @@ function CardsPage() {
 		setChoiceTwo(null)
 		setTurns(prev => prev + 1)
 		setDisabled(false)
-		console.log(countMatch)
 		checkEndGame()
 	}
 
@@ -84,7 +83,6 @@ function CardsPage() {
 	const checkEndGame = () => {
 		if (countMatch === 5) {
 			console.log('game over')
-			setCountMatch(0)
 			setTimeout(() => shuffleCards(), 3000)
 		} 
 	}
@@ -96,7 +94,7 @@ function CardsPage() {
 
 	return (
 		<div className="CardsPage relative">
-			<div className="cards-buttons absolute -top-10 flex gap-4">
+			<div className="cards-buttons absolute -top-20 flex gap-4">
 				<button 
 					onClick={finish}
 					className="text-center text-xl text-slate-900 bg-transparent border-2 border-slate-900 rounded-3xl px-4 py-1 hover:bg-lightBlue">
@@ -107,7 +105,11 @@ function CardsPage() {
 					className="text-center text-xl text-slate-900 bg-transparent border-2 border-slate-900 rounded-3xl px-4 py-1 hover:bg-lightBlue">
 					Restart
 				</button>
-				<p>Turns : {turns}</p>	
+				<button 
+					disabled
+					className="text-center text-xl text-slate-900 bg-transparent border-2 border-slate-900 rounded-3xl px-4 py-1 hover:bg-lightBlue">
+					Turns : {turns}
+				</button>
 			</div>
 			<div className="relative">
 				<div className="card-grid">
