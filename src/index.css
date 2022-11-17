@@ -141,8 +141,9 @@ transition: box-shadow 1s, border 1s, background-color 2s;
     z-index: -1;
     box-shadow: none;
     border: solid 2px #111827;
-    background-color: rgba(136, 158, 175, 0.7);
-}
-.slow-button:hover::hover {
+     /* background-color: rgba(136, 158, 175, 0.7);  */
+/* } */
+/* .slow-button:hover::hover {
     opacity: 1;
+    background-color: rgb(176, 173, 173); 
 } */

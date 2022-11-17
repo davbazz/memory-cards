@@ -15,7 +15,6 @@ function SingleCard({ card, handleChoice, flipped, disabled }) {
                     className="front mx-auto my-auto w-1/5"
                     loop
                     animationData={card.src}
-                    play
                 />
                 <img 
                     onClick={handleClick}
