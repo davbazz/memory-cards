@@ -48,3 +48,12 @@ module.exports = {
       darkSlate: '#0f172a',
       lightSlate: '#1e293b'
 */
+
+
+
+/*
+ trying different more fun colors
+ bg-yellow - #FFE8A3
+ dark-green - #55706D
+ light-green - #AED6D1
+*/

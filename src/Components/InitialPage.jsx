@@ -24,7 +24,7 @@ function InitialPage() {
 		<div className="InitialPage relative">
 			<h1 
 				className="text-center font-medium text-darkBlue 2xl:text-9xl xl:text-8xl lg:text-8xl md:text-7xl text-6xl 2xl:mt-32 xl:mt-24 lg:mt-16 md:mt-20 sm:mt-20 mt-12 dark:text-lightGray">
-				Memory Card Game
+				Memory Cards Game
 			</h1>
 			<div className="mx-auto flex justify-center items-center sm:flex-row flex-col lg:gap-12 md:gap-8 sm:gap-6 gap-8 2xl:mt-52 xl:mt-48 lg:mt-44 md:mt-40 sm:mt-36 mt-20">
 				<input 

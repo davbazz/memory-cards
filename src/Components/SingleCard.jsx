@@ -1,4 +1,41 @@
 import Lottie from 'react-lottie-player'
+import coverJson from '../lotties/cover.json'
+
+
+function SingleCard({ card, handleChoice, flipped, disabled }) {
+
+    const handleClick = () => {
+        if (!disabled) {
+            handleChoice(card)
+        }
+    }
+
+    return (
+        <div className="card">
+            <div className={flipped ? "flipped" : ""}>
+                <Lottie
+                    className="front mx-auto my-auto w-1/5"
+                    loop
+                    animationData={card.src}
+                />
+                <Lottie 
+                    onClick={handleClick}
+                    className="back"
+                    animationData={coverJson}
+                />
+            </div>
+        </div>
+    )
+}
+
+export default SingleCard
+
+
+
+
+
+/*
+import Lottie from 'react-lottie-player'
 
 function SingleCard({ card, handleChoice, flipped, disabled }) {
 
@@ -28,3 +65,4 @@ function SingleCard({ card, handleChoice, flipped, disabled }) {
 }
 
 export default SingleCard
+*/
