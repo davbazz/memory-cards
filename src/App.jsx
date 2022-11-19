@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import Header from './Components/Header'
 import InitialPage from './Components/InitialPage'
 import StartGamePage from './Components/StartGamePage'
-import CardsPage from'./Components/CardsPage.jsx'
+import GamePage from'./Components/GamePage.jsx'
 import WinPage from './Components/WinPage'
 import Highscore from './Components/HighscorePage'
 import LosePage from './Components/LosePage'
@@ -28,12 +28,12 @@ function App() {
 
   return (
     <Context.Provider value={{player, setPlayer}}>
-      <div className='screen-size py-6 px-4 bg-lightGray dark:bg-darkBlue font-baloo relative'>
+      <div className='screen-size py-6 px-4 bg-funYellow dark:bg-funDarkGreen font-baloo relative duration-300'>
         <Header />
         <Routes>
           <Route path={'/'} element={ <InitialPage /> } />
           <Route path='/start' element={ <StartGamePage /> } />
-          <Route path='/game' element={ <CardsPage /> } />
+          <Route path='/game' element={ <GamePage /> } />
           <Route path='/game/win' element={ <WinPage /> } />
           <Route path='/game/highscore' element={ <Highscore /> } />
           <Route path='/game/lose' element={ <LosePage /> } />

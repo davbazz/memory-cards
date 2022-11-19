@@ -15,16 +15,34 @@ module.exports = {
       darkSlate: '#0f172a',
       lightSlate: '#1e293b',
       darkBeige: '#d0cac0',
-      lightBeige: '#c5bdb2'
+      lightBeige: '#c5bdb2',
+      funYellow: '#FFE8A3',
+      funDarkGreen: '#55706D',
+      funLightGreen: '#AED6D1',
+      funLightBlue: '#8DCCC4',
+      funDarkOrange: '#CC704B',
+      funLightOrange: 'rgba(204, 112, 75, 0.7)'
     },
     fontFamily: {
       'baloo': ['"Baloo 2"']
     },
-    extend: {},
+    extend: {
+      margin: {
+        '5.5rem': '5.5rem',
+        '-5.5rem': '-5.5rem'
+      }
+    },
   },
   plugins: [],
 }
 
+
+// rgb(104, 125, 160)
+//'rgb(104, 118, 154)'
+// 7A86B6 495C83
+// rgb(122, 134, 182) rgb(90, 114, 154)
+
+// E38B29
 
 // lightGray: '#e6e2dd', D0C9C0, #e6e2de
 
