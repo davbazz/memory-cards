@@ -1,5 +1,6 @@
 import Lottie from 'react-lottie-player'
 import coverJson from '../lotties/cover.json'
+import cover from '../pictures/cover.jpg'
 
 
 function SingleCard({ card, handleChoice, flipped, disabled }) {
@@ -11,17 +12,20 @@ function SingleCard({ card, handleChoice, flipped, disabled }) {
     }
 
     return (
-        <div className="card">
-            <div className={flipped ? "flipped" : ""}>
-                <Lottie
-                    className="front mx-auto my-auto w-1/5"
-                    loop
-                    animationData={card.src}
+        <div className="card mx-auto w-3/12 h-1/12 odd:w-3/12 even:w-3/12">
+            <div 
+                className={flipped ? "flipped" : ""} 
+                id="card-wrapper">
+                <img 
+                    src={card.src} 
+                    alt="card front" 
+                    className="front"
                 />
-                <Lottie 
+                <img 
                     onClick={handleClick}
+                    src={cover} 
+                    alt="card back" 
                     className="back"
-                    animationData={coverJson}
                 />
             </div>
         </div>
@@ -32,7 +36,18 @@ export default SingleCard
 
 
 
-
+/*
+ <Lottie
+                    className="front block mx-auto w-2/12 h-1/12"
+                    loop
+                    animationData={card.src}
+                />
+    <Lottie 
+                    onClick={handleClick}
+                    className="back mx-auto"
+                    animationData={coverJson}
+                />
+*/
 
 /*
 import Lottie from 'react-lottie-player'

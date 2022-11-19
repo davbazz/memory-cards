@@ -24,7 +24,7 @@
     height: 100vh;
     min-height: 600px; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
-  }
+}
 
 @keyframes shake {
     0%, 100% {
@@ -48,27 +48,12 @@
     animation: shake 0.35 ease-in-out;
 }
 
-.card-grid {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-  }
-
-.card img {
-    width: 100%;
-    display: block;
-    border: 2px solid #fff;
-    border-radius: 6px;
-}
-
 /* front of card - the picture*/
 .card .front {
     transform: rotateY(90deg);
     transition: all ease-in 0.2s;
     position: absolute;
 }
-
 .flipped .front {
     transform: rotateY(0deg);
     transition-delay: 0.2s;
@@ -79,17 +64,16 @@
     transition: all ease-in 0.2s;
     transition-delay: 0.2s;
 }
-
 .flipped .back {
     transform: rotateY(90deg);
     transition-delay: 0s;
 }
-
 .footer-position {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    color: #49605d;
 }
 
 .slow-button {
@@ -98,35 +82,64 @@
     background-color: transparent;
     transition: box-shadow 1s, border 1s, background-color 2s;
 }
-
 .slow-button:hover {
     box-shadow: none;
     border: solid 2px #111827;
     background-color: rgba(136, 158, 175, 0.7);
 }
-
 .slow-button-sm {
     border: solid 2px transparent;
     background-color: transparent;
     transition: border 1.5s, background-color 2s;
 }
 
+.main-button {
+    border: 5px solid transparent;
+    border-radius: 40px;
+    transition: all 1.2s, border 0.5s 1.2s, box-shadow 0.3s 1.5s;
+    text-align: center;
+    white-space: nowrap;
+}
+.main-button span {
+  display: inline-block;
+  transform: translateX(300px);
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.1s 0.5s, transform 0.4s 0.5s;
+}
+.main-button:hover {
+  background: #55706D;
+  color: #FFE8A3;
+  width: 21rem;
+  border: 10px solid #8DCCC4;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
+}
+.main-button:hover span {
+  transform: translateX(3PX);
+  opacity: 1;
+}
 
-/* try dynamic shadow aniation
-/* #myDIV {
-    width: 100px;
-    height: 100px;
-    background-color: coral;
-    color: white;
-    animation: mymove 5s infinite;
-  }
-  
-  @keyframes shadow-dance {
-    0% {}
-    50% {box-shadow: 10px 20px 30px blue;}
-  } */
+.turn-button {
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* #card-wrapper {
+    width: 12rem;
+    height: 10rem;
+    margin: 0 auto;
+} */
 
+/* #card-wrapper-xl {
+    width: 14rem;
+    height: 14rem;
+    margin: 0 auto;
+} */
 
+/* #card-wrapper > img {
+    width: inherit;
+    height: inherit;
+    object-fit: fill;
+} */
 
 /* try ::after one more time
 /* .slow-button {
