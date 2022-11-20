@@ -12,14 +12,12 @@ function SingleCard({ card, handleChoice, flipped, disabled }) {
     }
 
     return (
-        <div className="card mx-auto w-3/12 h-1/12 odd:w-3/12 even:w-3/12">
-            <div 
-                className={flipped ? "flipped" : ""} 
-                id="card-wrapper">
+        <div className="card mx-auto 2xl:w-[15rem] 2xl:h-[12rem]">
+            <div className={flipped ? "flipped" : ""}>
                 <img 
                     src={card.src} 
                     alt="card front" 
-                    className="front"
+                    className="front 2xl:w-[16rem]"
                 />
                 <img 
                     onClick={handleClick}

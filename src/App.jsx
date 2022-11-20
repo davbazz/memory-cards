@@ -9,15 +9,18 @@ import Highscore from './Components/HighscorePage'
 import LosePage from './Components/LosePage'
 import Footer from './Components/Footer'
 
+
 export const Context = createContext(null);
 
 function App() {
 
-  const [player, setPlayer] = useState({
-    nickname: 'Your Nickname', 
-    games_played: 0,
-    highscore: 0 
-  })
+  	const [turns, setTurns] = useState(0) //test turn uesecontext
+
+  // const [player, setPlayer] = useState({
+  //   nickname: 'Your Nickname', 
+  //   games_played: 0,
+  //   highscore: 0 
+  // })
 
   function appHeight() {
     const doc = document.documentElement
@@ -27,7 +30,7 @@ function App() {
   appHeight();
 
   return (
-    <Context.Provider value={{player, setPlayer}}>
+    <Context.Provider value={{turns, setTurns}}>
       <div className='screen-size py-6 px-4 bg-funYellow dark:bg-funDarkGreen font-baloo relative duration-300'>
         <Header />
         <Routes>
