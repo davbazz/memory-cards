@@ -1,10 +1,10 @@
 import { useCallback, useContext } from "react"
 import { useNavigate } from "react-router-dom"
-import { Context } from "../App"
+// import { Context } from "../App"
 
 function StartGamePage() {
 
-	const { player, setPlayer } = useContext(Context)
+	// const { player, setPlayer } = useContext(Context)
 
     const navigate = useNavigate()
     const previousPage = useCallback(() => navigate('/', {replace: true}), [navigate])

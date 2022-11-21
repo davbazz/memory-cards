@@ -1,5 +1,6 @@
-import { useEffect, useState, useCallback } from "react"
+import { useEffect, useState, useCallback, useContext } from "react"
 import { useNavigate } from "react-router-dom"
+import { Context } from "../App" // turns test
 import SingleCard from "./SingleCard"
 import lottieJson1 from '../lotties/lottie1.json'
 import lottieJson2 from '../lotties/lottie2.json'
@@ -28,11 +29,13 @@ const cardImages = [
 function CardsPage() {
 
 	const [cards, setCards] = useState([])
-  	const [turns, setTurns] = useState(0)
 	const [countMatch, setCountMatch] = useState(0)
   	const [choiceOne, setChoiceOne] = useState(null)
   	const [choiceTwo, setChoiceTwo] = useState(null)
   	const [disabled, setDisabled] = useState(false)
+
+	const { turns, setTurns } = useContext(Context) //turns test
+
 
 	// navigation  
 	const navigate = useNavigate()
@@ -117,12 +120,12 @@ function CardsPage() {
 
 			<button
 					disabled
-					className="turn-button absolute lg:top-[-5.5rem] md:top-[-5.7rem] sm:top-[-5.4rem] top-[-5.3rem] text-center font-bold lg:text-3xl md:text-2xl text-xl rounded-3xl px-4 py-1 text-funYellow bg-funDarkGreen border-8 border-funLightBlue dark:text-funDarkGreen dark:bg-funYellow dark:border-funLightOrange">
+					className="turn-button absolute lg:top-[-5.5rem] md:top-[-5.7rem] sm:top-[-5.4rem] top-[-5.3rem] text-center font-bold lg:text-3xl md:text-2xl text-xl rounded-3xl px-4 py-1 text-funYellow bg-funDarkGreen border-8 border-funLightBlue dark:text-funDarkGreen dark:bg-funYellow dark:border-funLightOrange duration-200">
 					Turns : {turns}
 			</button>
 
 			<div className="relative">
-				<div className="flex justify-start items-start flex-wrap w-10/12 mx-auto lg:mt-9 sm:mt-10 mt-10">
+				<div className="flex justify-center items-start flex-wrap w-9/12 mx-auto lg:mt-9 sm:mt-10 mt-10">
 					{cards.map(card => (
 						<SingleCard
 							key={card.id} 
