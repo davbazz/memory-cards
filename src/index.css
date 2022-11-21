@@ -26,28 +26,6 @@
     height: calc(var(--vh, 1vh) * 100);
 }
 
-@keyframes shake {
-    0%, 100% {
-        transform: translateX(0)
-    }
-    20% {
-        transform: translateX(-13px)
-    }
-    40% {
-        transform: translateX(13px)
-    }
-    60% {
-        transform: translateX(-8px)
-    }
-    80% {
-        transform: translateX(8px)
-    }
-}
-
-.card .shake {
-    animation: shake 0.35 ease-in-out;
-}
-
 /* front of card - the picture*/
 .card .front {
     transform: rotateY(90deg);
@@ -74,23 +52,6 @@
     left: 50%;
     transform: translateX(-50%);
     color: #49605d;
-}
-
-.slow-button {
-    box-shadow: 0 0 20px 10px rgba(136, 158, 175, 0.7);
-    border: solid 2px transparent;
-    background-color: transparent;
-    transition: box-shadow 1s, border 1s, background-color 2s;
-}
-.slow-button:hover {
-    box-shadow: none;
-    border: solid 2px #111827;
-    background-color: rgba(136, 158, 175, 0.7);
-}
-.slow-button-sm {
-    border: solid 2px transparent;
-    background-color: transparent;
-    transition: border 1.5s, background-color 2s;
 }
 
 .main-button {
@@ -123,40 +84,3 @@
     left: 50%;
     transform: translateX(-50%);
 }
-/* #card-wrapper {
-    width: 12rem;
-    height: 10rem;
-    margin: 0 auto;
-} */
-
-/* #card-wrapper-xl {
-    width: 14rem;
-    height: 14rem;
-    margin: 0 auto;
-} */
-
-/* #card-wrapper > img {
-    width: inherit;
-    height: inherit;
-    object-fit: fill;
-} */
-
-/* try ::after one more time
-/* .slow-button {
-box-shadow: 0 0 20px 10px rgba(136, 158, 175, 0.7);
-border: solid 2px transparent;
-background-color: transparent;
-transition: box-shadow 1s, border 1s, background-color 2s;
-}
-.slow-button::after {
-    content: '';
-    opacity: 0;
-    z-index: -1;
-    box-shadow: none;
-    border: solid 2px #111827;
-     /* background-color: rgba(136, 158, 175, 0.7);  */
-/* } */
-/* .slow-button:hover::hover {
-    opacity: 1;
-    background-color: rgb(176, 173, 173); 
-} */
