@@ -1,5 +1,3 @@
-import cover from '../img/cover.jpg'
-
 function SingleCard({ card, handleChoice, flipped, disabled }) {
 
     const handleClick = () => {
