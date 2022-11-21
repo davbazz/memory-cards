@@ -46,13 +46,6 @@
     transform: rotateY(90deg);
     transition-delay: 0s;
 }
-.footer-position {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #49605d;
-}
 
 .main-button {
     border: 5px solid transparent;
@@ -83,4 +76,12 @@
 .turn-button {
     left: 50%;
     transform: translateX(-50%);
+}
+
+.footer-position {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #49605d;
 }

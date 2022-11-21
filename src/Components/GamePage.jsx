@@ -2,21 +2,21 @@ import { useEffect, useState, useCallback, useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { Context } from "../App" 
 import SingleCard from "./SingleCard"
-import pic1 from '../img/pic1.jpg'
-import pic2 from '../img/pic2.jpg'
-import pic3 from '../img/pic3.jpg'
-import pic4 from '../img/pic4.jpg'
-import pic5 from '../img/pic5.jpg'
-import pic6 from '../img/pic6.jpg'
+import VanGogh_1 from '../img/VanGogh_1.jpeg'
+import VanGogh_2 from '../img/VanGogh_2.jpeg'
+import VanGogh_3 from '../img/VanGogh_3.jpeg'
+import VanGogh_4 from '../img/VanGogh_4.jpeg'
+import VanGogh_5 from '../img/VanGogh_5.jpeg'
+import VanGogh_6 from '../img/VanGogh_6.jpeg'
 
 
 const cardImages = [
-	{ "src": pic1, matched: false },
-	{ "src": pic2, matched: false },
-	{ "src": pic3, matched: false },
-	{ "src": pic4, matched: false },
-	{ "src": pic5, matched: false },
-	{ "src": pic6, matched: false }
+	{ "src": VanGogh_1, matched: false },
+	{ "src": VanGogh_2, matched: false },
+	{ "src": VanGogh_3, matched: false },
+	{ "src": VanGogh_4, matched: false },
+	{ "src": VanGogh_5, matched: false },
+	{ "src": VanGogh_6, matched: false }
 ]
 
 
@@ -119,7 +119,7 @@ function CardsPage() {
 			</button>
 
 			<div className="relative">
-				<div className="flex justify-center items-start flex-wrap w-9/12 mx-auto lg:mt-9 sm:mt-10 mt-10">
+				<div className="flex justify-center items-start flex-wrap w-9/12 mx-auto lg:mt-9 sm:mt-10 mt-10 ">
 					{cards.map(card => (
 						<SingleCard
 							key={card.id} 
