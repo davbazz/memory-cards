@@ -24,7 +24,12 @@ function App() {
   appHeight();
 
   useEffect(() => {
-	if (window.location.href !== 'https://memory-cards-portfolio.netlify.app/') return reload()
+	console.log(window.location.href)
+	console.log(window.location.pathname)
+  }, [])
+
+  useEffect(() => {
+	if (window.location.pathname !== '/') return reload()
   }, [window.onbeforeunload])
 
   return (
