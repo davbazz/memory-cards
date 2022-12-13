@@ -16,7 +16,7 @@ function SingleCard({ card, handleChoice, flipped, disabled, cover }) {
                     <img
                         src={card.src} 
                         alt="card front" 
-                        className="border-2 border-lightBlue dark:border-lightOrange rounded-2xl w-full h-full duration-0"
+                        className="sm:border-2 border-[1px] border-lightBlue dark:border-lightOrange rounded-2xl w-full h-full duration-0"
                     />
                 </div>
                 <div 
