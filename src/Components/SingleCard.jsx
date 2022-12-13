@@ -1,4 +1,4 @@
-function SingleCard({ card, handleChoice, flipped, disabled }) {
+function SingleCard({ card, handleChoice, flipped, disabled, cover }) {
 
     const handleClick = () => {
         if (!disabled) {
@@ -21,11 +21,11 @@ function SingleCard({ card, handleChoice, flipped, disabled }) {
                 </div>
                 <div 
                     onClick={handleClick}
-                    className="back relative text-2xl font-light text-center text-darkGreen dark:text-yellow  rounded-2xl w-full h-full border-2 border-darkGreen dark:border-yellow bg-yellow dark:bg-darkGreen duration-0">
-                    <span 
-                        className="inline-block text-left mx-auto mt-[10%] border-2 border-yellow w-auto h-[80%]">
-                        Van <br/> Gogh's <br/> Art
-                    </span>
+                    className="back relative text-center rounded-2xl w-full h-full border-2 border-darkGreen dark:border-yellow bg-yellow dark:bg-darkGreen duration-0">
+                    <img 
+                        src={cover}
+                        className="img-cover sm:w-[40%] sm:h-[50%] w-[60%] h-[60%]"
+                    />
                 </div>
             </div>
         </div>
@@ -35,6 +35,16 @@ function SingleCard({ card, handleChoice, flipped, disabled }) {
 export default SingleCard
 
 
+{/* 
+     <div 
+                    onClick={handleClick}
+                    className="back relative text-2xl font-light text-center text-darkGreen dark:text-yellow  rounded-2xl w-full h-full border-2 border-darkGreen dark:border-yellow bg-yellow dark:bg-darkGreen duration-0">
+                    <span 
+                        className="inline-block text-left mx-auto mt-[10%] border-2 border-yellow w-auto h-[80%]">
+                        Van <br/> Gogh's <br/> Art
+                    </span>
+                </div>
+*/}
 
 
 

@@ -15,10 +15,11 @@ function InitialPage() {
 			</h1>
 			<h2 
 				className="text-center text-xl mt-10 text-darkGreen dark:text-yellow italic">
-				Find matching Van Gogh's art in as few turns as possible!</h2>
+				Find matching Van Gogh's art in as few turns as possible!
+			</h2>
 			<button 
 				onClick={slowNextPage}
-				className="main-button block text-darkGreen font-bold text-lg mx-auto sm:mt-40 mt-20 w-52 px-8 py-3 bg-lightBlue dark:bg-darkOrange overflow-hidden dark:text-yellow hover:bg-darkGreen dark:hover:bg-yellow dark:hover:text-darkGreen dark:hover:border-lightOrange">
+				className="main-button block text-darkGreen font-bold text-lg mx-auto sm:mt-40 mt-20 sm:w-52 w-48 sm:px-8 px-6 py-3 bg-lightBlue dark:bg-darkOrange overflow-hidden dark:text-yellow hover:bg-darkGreen dark:hover:bg-yellow dark:hover:text-darkGreen dark:hover:border-lightOrange">
 				START THE GAME
 				<span> - and have fun</span>
 			</button>
