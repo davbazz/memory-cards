@@ -2,12 +2,12 @@ import { useEffect, useState, useCallback, useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { Context } from "../App" 
 import SingleCard from "./SingleCard"
-import VanGogh_1 from '../img/VanGogh_1.jpeg'
-import VanGogh_2 from '../img/VanGogh_2.jpeg'
-import VanGogh_3 from '../img/VanGogh_3.jpeg'
-import VanGogh_4 from '../img/VanGogh_4.jpeg'
-import VanGogh_5 from '../img/VanGogh_5.jpeg'
-import VanGogh_6 from '../img/VanGogh_6.jpeg'
+import VanGogh_1 from '../img/VanGogh_1.jpg'
+import VanGogh_2 from '../img/VanGogh_2.jpg'
+import VanGogh_3 from '../img/VanGogh_3.jpg'
+import VanGogh_4 from '../img/VanGogh_4.jpg'
+import VanGogh_5 from '../img/VanGogh_5.jpg'
+import VanGogh_6 from '../img/VanGogh_6.jpg'
 import VanGogh_Cover from '../img/VanGogh_Cover.png'
 
 
