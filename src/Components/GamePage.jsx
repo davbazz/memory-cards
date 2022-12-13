@@ -101,7 +101,7 @@ function CardsPage() {
 	const checkEndGame = () => {
 		if (countMatch === 5) {
 			console.log('game over')
-			setTimeout(() => setWin(true), 2000)
+			setTimeout(() => setWin(true), 1500)
 		} 
 	}
 
