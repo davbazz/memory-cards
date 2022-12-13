@@ -138,12 +138,12 @@ function CardsPage() {
 		<div className="cards-buttons absolute flex justify-start items-center sm:flex-row flex-col lg:-top-20 md:top-[-5.1rem] sm:top-[-5rem] top-[-5.5rem] md:gap-4 sm:gap-2 gap-1">
 		<button 
 			onClick={finish}
-			className="text-center lg:text-2xl md:text-xl sm:text-lg font-bold 2xl:w-32 lg:w-28 md:w-24 w-[4.5rem] text-darkGreen bg-transparent border-2 border-darkGreen hover:border-darkGreen rounded-3xl sm:py-1 py-0 hover:bg-darkGreen hover:text-yellow dark:border-yellow  dark:text-yellow dark:hover:border-yellow dark:hover:text-darkGreen dark:hover:bg-yellow duration-200">
+			className="text-center lg:text-2xl md:text-xl sm:text-lg font-bold 2xl:w-32 lg:w-28 md:w-24 w-[4.5rem] text-darkGreen bg-transparent border-2 border-darkGreen hover:border-darkGreen md:rounded-2xl sm:rounded-2xl rounded-xl sm:py-1 py-0 hover:bg-darkGreen hover:text-yellow dark:border-yellow  dark:text-yellow dark:hover:border-yellow dark:hover:text-darkGreen dark:hover:bg-yellow duration-200">
 			Finish
 		</button>
 		<button 
 			onClick={shuffleCards}
-			className="text-center lg:text-2xl md:text-xl sm:text-lg font-bold 2xl:w-32 lg:w-28 md:w-24 w-[4.5rem] text-darkGreen bg-transparent border-2 border-darkGreen hover:border-darkGreen rounded-3xl sm:py-1 py-0 hover:bg-darkGreen hover:text-yellow dark:border-yellow  dark:text-yellow dark:hover:border-yellow dark:hover:text-darkGreen dark:hover:bg-yellow duration-200">
+			className="text-center lg:text-2xl md:text-xl sm:text-lg font-bold 2xl:w-32 lg:w-28 md:w-24 w-[4.5rem] text-darkGreen bg-transparent border-2 border-darkGreen hover:border-darkGreen md:rounded-2xl sm:rounded-2xl rounded-xl sm:py-1 py-0 hover:bg-darkGreen hover:text-yellow dark:border-yellow  dark:text-yellow dark:hover:border-yellow dark:hover:text-darkGreen dark:hover:bg-yellow duration-200">
 			Restart
 		</button>
 		</div>

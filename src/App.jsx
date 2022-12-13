@@ -1,5 +1,5 @@
-import { createContext, useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { createContext, useState, useCallback } from 'react'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import Header from './Components/Header'
 import InitialPage from './Components/InitialPage'
 import GamePage from'./Components/GamePage'
@@ -13,12 +13,19 @@ function App() {
 
   const [turns, setTurns] = useState(0)
 
+  const navigate = useNavigate()
+  const reload = useCallback(() => navigate('/', {replace: true}), [navigate])
+
   function appHeight() {
 	const doc = document.documentElement
 	doc.style.setProperty('--vh', (window.innerHeight*.01) + 'px');
   }
   window.addEventListener('resize', appHeight);
   appHeight();
+
+  useEffect(() => {
+	if (window.location.href !== 'https://memory-cards-portfolio.netlify.app/') return reload()
+  }, [window.onbeforeunload])
 
   return (
 	<Context.Provider value={{turns, setTurns}}>
