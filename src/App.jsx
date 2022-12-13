@@ -29,7 +29,10 @@ function App() {
   }, [])
 
   useEffect(() => {
-	if (window.location.pathname === '/game') return reload()
+	if (window.location.pathname === '/game') {
+		console.log('yup, that is true')
+		reload()
+	}
   }, [window.onbeforeunload])
 
   return (
