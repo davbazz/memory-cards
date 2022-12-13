@@ -85,3 +85,8 @@
     transform: translateX(-50%);
     color: #49605d;
 }
+
+.main-screen-size-sm {
+    height: calc(100% - 160px);
+}
+

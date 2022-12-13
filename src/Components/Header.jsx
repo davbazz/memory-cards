@@ -11,7 +11,7 @@ function Header() {
 	}
 	
 	return (
-		<div className="Header">
+		<div className="Header w-full">
 			<nav className="flex justify-end items-center overflow-hidden">
 				<div className="buttons flex justify-around 2xl:w-36 xl:w-32 lg:w-28 md:w-24 w-24 h-auto sm:-mr-0 -mr-2">
 					<button 

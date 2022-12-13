@@ -23,7 +23,7 @@ function App() {
 
   return (
     <Context.Provider value={{turns, setTurns}}>
-      <div className="screen-size py-6 px-4 bg-yellow dark:bg-darkGreen font-baloo relative duration-300">
+      <div className="screen-size py-6 px-4 bg-yellow dark:bg-darkGreen font-baloo relative duration-300 max-h-screen">
         <Header />
         <Routes>
           <Route path={'/'} element={ <InitialPage /> } />

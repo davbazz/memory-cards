@@ -38,9 +38,9 @@ function CardsPage() {
 	// shuffle cards
 	const shuffleCards = () => {
 		const shuffledCards = [...cardImages, ...cardImages]
-			.sort(() => Math.random() - 0.5)
-			.map((card) => ({ ...card, id: Math.random() }))
-		
+		.sort(() => Math.random() - 0.5)
+		.map((card) => ({ ...card, id: Math.random() }))
+	
 		setChoiceOne(null)
 		setChoiceTwo(null)
 		setCards(shuffledCards)
@@ -75,6 +75,16 @@ function CardsPage() {
 		}
 	}, [choiceOne, choiceTwo])
 
+	// prevents from double click to find match
+	useEffect(() => {
+		if (choiceOne) {
+			setDisabled (true)
+			setTimeout(() => {
+				setDisabled(false)
+			}, 180)
+		}
+	}, [choiceOne])
+
 	//reset choices & increase turn
 	const resetTurn = () => {
 		setChoiceOne(null)
@@ -88,7 +98,7 @@ function CardsPage() {
 	const checkEndGame = () => {
 		if (countMatch === 5) {
 			console.log('game over')
-			setTimeout(() => shuffleCards(), 3000)
+			// setTimeout(() => shuffleCards(), 3000)
 		} 
 	}
 
@@ -98,7 +108,7 @@ function CardsPage() {
 	}, [])
 
 	return (
-		<div className="CardsPage relative">
+		<div className="CardsPage relative main-screen-size-sm">
 			<div className="cards-buttons absolute flex justify-start items-center sm:flex-row flex-col lg:-top-20 md:top-[-5.1rem] sm:top-[-5rem] top-[-5.5rem] md:gap-4 sm:gap-2 gap-1">
 				<button 
 					onClick={finish}
@@ -118,18 +128,16 @@ function CardsPage() {
 					Turns : {turns}
 			</button>
 
-			<div className="relative">
-				<div className="flex justify-center items-start flex-wrap w-9/12 mx-auto lg:mt-9 sm:mt-10 mt-10 ">
-					{cards.map(card => (
-						<SingleCard
-							key={card.id} 
-							card={card}
-							handleChoice={handleChoice}
-							flipped={card === choiceOne || card === choiceTwo || card.matched}
-							disabled={disabled}
-						/>
-					))}
-				</div>
+			<div className="cards flex justify-center items-start flex-wrap gap-[1.33%] w-full sm:w-11/12 h-full mx-auto lg:mt-9 sm:mt-10 mt-10 duration-0">
+				{cards.map(card => (
+					<SingleCard
+						key={card.id} 
+						card={card}
+						handleChoice={handleChoice}
+						flipped={card === choiceOne || card === choiceTwo || card.matched}
+						disabled={disabled}
+					/>
+				))}
 			</div>
 		</div>
 	)
