@@ -12,6 +12,7 @@ export const Context = createContext(null);
 function App() {
 
   const [turns, setTurns] = useState(0)
+  const [currentLink, setCurrentLink] = useState(window.location.href)
 
   const navigate = useNavigate()
   const reload = useCallback(() => navigate('/', {replace: true}), [navigate])
@@ -24,12 +25,11 @@ function App() {
   appHeight();
 
   useEffect(() => {
-	console.log(window.location.href)
-	console.log(window.location.pathname)
+	console.log(currentLink)
   }, [])
 
   useEffect(() => {
-	<Link to={window.location.href}></Link>
+	setCurrentLink((prevLink) => 'https://memory-cards-portfolio.netlify.app')
   }, [window.onbeforeunload])
 
   return (
