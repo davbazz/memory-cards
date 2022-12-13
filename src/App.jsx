@@ -14,7 +14,7 @@ function App() {
   const [turns, setTurns] = useState(0)
 
   const navigate = useNavigate()
-  const reload = useCallback(() => navigate('/', {replace: true}), [navigate])
+//   const reload = useCallback(() => navigate('/', {replace: true}), [navigate])
 
   function appHeight() {
 	const doc = document.documentElement
@@ -29,10 +29,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-	if (window.location.pathname === '/game') {
-		console.log('yup, that is true')
-		reload()
-	}
+	useCallback(() => navigate('/', {replace: true}), [navigate])
   }, [window.onbeforeunload])
 
   return (
