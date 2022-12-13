@@ -1,4 +1,4 @@
-import { createContext, useState, useCallback } from 'react'
+import { createContext, useState, useEffect, useCallback } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import Header from './Components/Header'
 import InitialPage from './Components/InitialPage'
