@@ -14,7 +14,7 @@ function App() {
   const [turns, setTurns] = useState(0)
 
   const navigate = useNavigate()
-//   const reload = useCallback(() => navigate('/', {replace: true}), [navigate])
+  const reload = useCallback(() => navigate('/', {replace: true}), [navigate])
 
   function appHeight() {
 	const doc = document.documentElement
@@ -29,7 +29,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-	useCallback(() => navigate('/', {replace: true}), [navigate])
+	<Link to={window.location.href}></Link>
   }, [window.onbeforeunload])
 
   return (
