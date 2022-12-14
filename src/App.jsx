@@ -1,5 +1,4 @@
 import { createContext, useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
 import Header from './Components/Header'
 import InitialPage from './Components/InitialPage'
 import GamePage from'./Components/GamePage'
@@ -12,6 +11,7 @@ export const Context = createContext(null);
 function App() {
 
   const [turns, setTurns] = useState(0)
+  const [game, setGame] = useState(false)
 
   function appHeight() {
 	const doc = document.documentElement
@@ -24,10 +24,9 @@ function App() {
 	<Context.Provider value={{turns, setTurns}}>
 	  <div className="screen-size py-6 px-4 bg-yellow dark:bg-darkGreen font-baloo relative duration-300 h-auto">
 		<Header />
-		<Routes>
-		  <Route path={'/'} element={ <InitialPage/> } />
-		  <Route path='/game' element={ <GamePage/> } />
-		</Routes>
+		{	game 
+			? <GamePage setGame={setGame}/> 
+			: <InitialPage setGame={setGame}/> }
 		<Footer />
 	  </div>
 	</Context.Provider>

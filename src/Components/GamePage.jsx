@@ -1,5 +1,4 @@
-import { useEffect, useState, useCallback, useContext } from "react"
-import { useNavigate } from "react-router-dom"
+import { useEffect, useState, useContext } from "react"
 import { Context } from "../App" 
 import SingleCard from "./SingleCard"
 import VanGogh_1 from '../img/VanGogh_1.jpg'
@@ -21,7 +20,7 @@ const cardImages = [
 ]
 
 
-function CardsPage() {
+function CardsPage({ setGame }) {
 
 	const [cards, setCards] = useState([])
 	const [countMatch, setCountMatch] = useState(0)
@@ -32,10 +31,10 @@ function CardsPage() {
 
 	const { turns, setTurns } = useContext(Context)
 
-
-	// navigation  
-	const navigate = useNavigate()
-	const finish = useCallback(() => navigate('/', {replace: true}), [navigate])
+	// navigation
+	const finishTheGame = () => {
+		setTimeout(() => setGame(false), 100)
+	}
 
 	// shuffle cards
 	const shuffleCards = () => {
@@ -100,7 +99,6 @@ function CardsPage() {
 	// check end game 
 	const checkEndGame = () => {
 		if (countMatch === 5) {
-			console.log('game over')
 			setTimeout(() => setWin(true), 1500)
 		} 
 	}
@@ -137,7 +135,7 @@ function CardsPage() {
 	: <div className="GamePage relative main-screen-size-sm">
 		<div className="cards-buttons absolute flex justify-start items-center sm:flex-row flex-col lg:-top-20 md:top-[-5.1rem] sm:top-[-5rem] top-[-5.5rem] md:gap-4 sm:gap-2 gap-1">
 		<button 
-			onClick={finish}
+			onClick={finishTheGame}
 			className="text-center lg:text-2xl md:text-xl sm:text-lg font-bold 2xl:w-32 lg:w-28 md:w-24 w-[4.5rem] text-darkGreen bg-transparent border-2 border-darkGreen hover:border-darkGreen md:rounded-2xl sm:rounded-2xl rounded-xl sm:py-1 py-0 hover:bg-darkGreen hover:text-yellow dark:border-yellow  dark:text-yellow dark:hover:border-yellow dark:hover:text-darkGreen dark:hover:bg-yellow duration-200">
 			Finish
 		</button>
