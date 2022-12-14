@@ -7,7 +7,7 @@ function InitialPage({ setGame }) {
 	return (
 		<div className="relative">
 			<h1 
-				className="text-center font-medium text-darkGreen 2xl:text-9xl lg:text-8xl md:text-7xl text-6xl 2xl:mt-32 xl:mt-24 lg:mt-16 md:mt-20 sm:mt-20 mt-12 dark:text-yellow duration-300">
+				className="text-center font-medium text-darkGreen 2xl:text-[116px] lg:text-8xl md:text-7xl text-6xl 2xl:mt-32 xl:mt-24 lg:mt-16 md:mt-20 sm:mt-20 mt-12 dark:text-yellow duration-300">
 				Memory Cards Game
 			</h1>
 			<h2 
